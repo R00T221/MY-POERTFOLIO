@@ -1,0 +1,351 @@
+/* importing a font-style */
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam Pro", sans-serif;
+     scroll-behavior: smooth;
+}
+/* defining a global variable */
+:root{
+    --bgOrange:#e84949;
+}
+.wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+/* WE USED THE CONTAINER SO THAT WE CAN SET AN EXPLICIT WIDTH AND MARGIN TO ALL THE SECTIONS INSIDE IT WHICH WILL BE INDEPENDENT OF WRAPPER */
+.container{
+    width: 75rem; /* 75rem=1200px */
+    margin: 0 auto;
+}
+/* since navbar contains 2 main divs,where each div is on either side,so displaying it flex */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    /* to align them at the center along cross axis i:e they will align at center of the navbar div at their respective positions vertically,we will use align items */
+    align-items: center;
+    padding-top: 1rem;
+
+}
+.logo{
+    width: 5.1rem;
+}
+/* now logo-container contains logo 'j' and the text and we want the text to align horizontolly with the 'j' logo,so we will display logo-container as flex */
+.logo-container{
+    display: flex;
+    /* to align them vertically at center so that they come in straigh line*/
+    align-items: center;
+    
+}
+/* styling text to bring it closer to logo */
+.logo-text{
+    /* giving it the negative margin so that it comes closer to the logo */
+     margin-left:-0.9rem;
+     font-size: 1.75rem;
+}
+/* now nav items must also be in staright line so displaying it a flex as well */
+.nav-items{
+    display: flex;
+    gap:2.5rem;
+    padding: 0 4rem;
+    font-size: 1.25rem;
+    
+}
+.nav-items div{
+    font-weight: 500;
+    cursor: pointer;
+ /* since on hover each link gets bold font style a little,so setting transition delay for font-style */
+ transition: font-weight 0.6s;
+}
+.nav-items a{
+    text-decoration: none;
+    color: black;
+}
+.nav-items div:hover{
+    font-weight:bold;
+}
+/* =====================================
+     STYLING HERO SECTION 
+   =====================================  */
+   .hero-section{
+    /* setting position relative becox we want position of icon images to be absolute so that they can overlap main image */
+    position: relative;
+    /* since the main 3 contents(hero-section-left,hero-section-right and faded-text) should come in one straight line so displaying it flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto;
+    gap: 5rem;
+    padding: 0 1rem 8rem 1rem;
+
+   }
+   /* FADED TEXT */
+   .faded-text{
+    position: absolute;
+    /* since we don;t want this text to be selected by user,we set the user-select property to none */
+    user-select: none;
+    font-size: 7em;
+    color: rgb(231,231,231);
+    bottom: -18%;
+    left: -5%;
+    font-weight: bold;
+    /* since we want it to appear slowly as page loads so we set transition delay */
+    transition: all 3s;
+   }
+   /* HERO-SECTION-LEFT */
+   .hero-section-left{
+    /* since the elements in left section appears in column direxn,so displaying it flex with column direxn*/
+    display: flex;
+    flex-direction: column;
+    /* since main axis is vertical and to align the content at center of main axis,we use justify content */
+    justify-content: center;
+    gap: 2rem;
+   }
+   /* styling hero-section-heading */
+   .hero-section-heading{
+    font-size: 2.188rem;
+    color: #343d68;
+    font-weight: 500;
+   }
+   /* RUNNING TEXT SYLING */
+   .role{
+    color: #4e45d5;
+    font-weight: 800;
+   }
+   /* hero-section-sub-heading.NOTE THAT IT INCLUDES THE RUNNING TEXT AS WELL*/
+   .hero-section-sub-heading{
+    font-size: 2.813rem;
+    line-height: 2.813rem;
+   }
+   /* HERO-SECTION-DESCRIPTION */
+   .hero-section-description{
+    margin-top: 1rem;
+    width: 70%;
+    font-weight: 500;
+   }
+   /*====================================== 
+             STYLING BUTTON 
+   ======================================*/
+   .btn-pink {
+    background-color: var(--bgOrange);
+    width: fit-content;
+    color: white;
+    padding: 0.8rem 2.3rem;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    border: solid 3px transparent;
+    position: relative;
+    z-index: 1;
+  }
+  .btn-pink::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s;
+  }
+  .btn-pink:hover::before {
+    transform: scaleX(1);
+  }
+  .btn-pink:hover {
+    border: solid 3px var(--bgOrange);
+    color: black;
+  }
+
+  /*==============================================   
+            STYLING HERO-SECTION-RIGHT 
+    ==============================================*/
+  .hero-section-right{
+    /* setting position to relative so that it's child elements get absolute position */
+    position: relative;
+
+  }
+  /* using absolute class of icons to settheir position to absolute */
+  .absolute{
+    position: absolute;
+    /* setting z-index 1 so that these images come over the main image */
+    z-index: 1;
+  }
+  /* STYLING MAIN IMAGE */
+  .user-image{
+    /* since when the image is in animation and while it scales down,the padding and border is visible,so setting padding*/
+    padding:2.5rem;
+
+ /*=========== N-O-T-E ====================
+     when image is scaled up in animation a greyscale filter is visible and also image scales up and down and shadow also appears.Usualoly we would set the transition duration but since we are in animation,we don;t need to use transition duration.Transition is used when the state of the element changes but in animation we dont change the state of element as we only change position/properties of the element*/
+    
+    /* setting animation for user-image div for shadow only*/
+    animation: shadow 5s linear infinite;
+  }
+  .user-image img{
+    /* setting z-index to -1 so that main image is beneath the icon images whose z-index is 1 */
+    z-index: -1;
+    /* using scale and greyscale animation on actual image rather than on div(user-image) that contains main image */
+    animation: ScaleImage 5s linear infinite;
+  }
+  /* keyframes for shadow animation */
+  @keyframes shadow{
+    0%{
+        /* at start of animation shadow should appear.Appearance of shadow makes it look as border also appears but it is shadow not the border */
+        box-shadow:3px 3px 10px black;
+    }
+    50%{
+        box-shadow: none
+    }
+    /* when animation is about to complete,shadow should appear */
+    100%{
+        box-shadow:3px 3px 10px black;
+    }
+  }
+  /* setting keyframes for animation named ScaleImage */
+  @keyframes ScaleImage{
+    /* at start of animation we want the image to be colored and of original size */
+
+    0%{
+        transform: scale(1);
+        filter: grayscale(0);
+        /* box-shadow: 3px 3px 10px black; */
+    }
+    /* at 50% we want the image to be greyscale and scaled with no box-shadow(thus no padding) */
+    
+   
+    50%{
+        transform: scale(1.1);
+        filter: grayscale(1);
+        /* box-shadow: 3px 3px 10px black; */
+    }
+    /* at 100% we want the image to be of original size with no greyscale effect,thus  */
+
+   
+    100%{
+        transform: scale(1);
+        filter: grayscale(0);
+        /* box-shadow: 3px 3px 10px black; */
+    }
+  }
+
+  /* =================================
+             ICON-DOTS 
+    ====================================
+    The animation in icon-dots is up-down which meas translateY and icon dots are placed at bottom-right of the main image*/
+    .icon-dots{
+        /* positioning icon-dots at -1rem from the border of it's parent div(hero-section-right) */
+        bottom: -1rem;
+        right: 0;
+        /* Adding animation */
+        animation-name: dotAnimation;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    /* Keyframes for dotAnimation */
+    @keyframes dotAnimation{
+        /* at 0% there is no animation along Y axis */
+        0%{
+            transform: translateY(0);
+        }
+        /* at 50% the icon-dots are over th the image,thus they translate along Y axis but in negative direxn which means upwards */
+       50%{
+        transform:translateY(-15px)
+       } 
+       100%{
+        transform: translateY(0);
+       }
+    }
+     /* =================================
+             ICON-CUBE
+    =====================================
+    Icon cube is placed at top right corner of the main image and does 2 types of animations simultaneousely.It translates along y-axis and rotates as well around y-axis
+    */
+    .icon-cube{
+        top: -1.2rem;
+        right: 1em;
+        /* setting animation for cube-icon */
+        animation: cubeRotate 5s infinite;
+    }
+    /* SETTING KEYFRAMES FOR cubeRotate */
+    @keyframes cubeRotate{
+        /* at 0% the cube is at 0 deg with no movement along y-axis */
+        0%{
+            transform: rotateY(0) translateY(0);
+        }
+        /* at 50% the cube is rotated 180deg along y-axis and translated along y-axis upwards(-ve value) */
+        50%{
+            transform: rotateY(180deg) translateY(-12px);
+        }
+        /* at 100% the cube is rotated another 360 deg but is back at original position along y-axis */
+        100%{
+            transform: rotateY(360deg) translateY(0);
+        }
+    }
+    /* ================================= 
+             ICON-CIRCLE
+    ==================================== 
+    ICON-CIRCLE IS PLACED AT BOTTOM LEFT CORNER OF THE MAIN IMAGE.IT'S ANIMATION IS THAT IT MOVES FROM ONE SPOT TO ANOTHER WHICH CAN BE ACHIEVED BY CHANGING POSITIONS IN KEYFRAMES OR USING TRANSLATE PROPERTY*/
+    .icon-circle{
+        left: 0;
+        bottom: 0;
+        animation-name: shakeEffect;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    /* KEYFRAMES FOR shakeEffect */
+    @keyframes shakeEffect{
+        /* NOTE IN KEYFRAMES BELOW WE CAN SKIP 0% AND 100% BECOX AT THESE 2 INSTANCES THERE IS NO EFFECT */
+        0%{
+            bottom: 0;
+            left: 0;
+        }
+        50%{
+           bottom: 8%;
+           left: 4%;
+        }
+        100%{
+            bottom: 0;
+            left: 0;
+        }
+    }
+    /* ================================= 
+             ICON-CIRCLE
+    ==================================== 
+   icon-zigzag is placed at top left corner of the main image and is translated along x-axis */
+   .icon-zigzag{
+    top: 1em;
+    left: -0.3em;
+    animation:zigzagAnimation 5s ease-in infinite;
+   }
+   /* keyframes for zig-zag animation */
+   @keyframes zigzagAnimation{
+    50%{
+        transform: translateX(12px);
+    }
+   }
+    /* ================================= 
+             ICON-PLUS
+    ==================================== 
+   icon-plus is placed at top center of the main image and chhanges position from top and a little from left */
+   .icon-plus{
+    top: -0.8rem;
+    left: 50%;
+    animation: shakeEffectPlus 5s ease-in infinite;
+   }
+   /* keyframes for shakeEffectPlus */
+   @keyframes shakeEffectPlus{
+    50%{
+        top: 3%;
+        left: 48%;
+    }
+   }
+    

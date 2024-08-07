@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY-PORTFOLIO</title>
+    <link rel="stylesheet" href="My-Portfolio.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- creating a container div which will have a hard coded width -->
+        <div class="container">
+      <!-- creating a div for nav-bar inside container  -->
+           <div class="navbar">
+           <!-- THE NAV BAR CONTAINS 2 MAIN ELEMENTS,ONE IS THE LEFT LOGO 'J'  WITH SOME TEXT AND 2ND IS THE NAV LINKS ON THE RIGHT.SO CREATING 2 SEPARATE DIVs INSIDE NAV BAR WITH ONE DIV NAMELY logo-container CONTAINING LOGO 'J' AND THE TEXT AND ANOTHER DIV NAMELY nav-items CONTAINING NAV LINKS-->
+           <div class="logo-container">
+            <img src="/w-logo.png" class="logo">
+            <!-- creating a div for the text within the logo-container and using the div so that we can display it flex with which they will come in one straight line -->
+            <div class="logo-text">ajahat Hassan</div>
+           </div>  <!--logo container ends-->
+           <div class="nav-items">
+            <!-- using bookmarks (#projects etc) in href so that when clicked,user is redirected t the specific section with specific id which is already mentioned in href.Also using separate div for each hyperlink-->
+           <div><a href="#projects">Projects</a></div>
+           <div><a href="#skills">Skills</a></div>
+           <div><a href="#contactme">Contact Me</a></div>
+           </div> <!--nav-items ends-->
+           </div>  <!--nav-bar ends-->
+
+<!-- =============================================
+              HERO SECTION
+         ==========================================    -->
+        
+         <!-- HERO SECTION MAINLY HAS 2 PARTS,LEFT HERO SECTION AND RIGHT HERO SECTION
+         (*)LEFT HERO SECTION CONTAINS A HEADING,THEN A RUNNING TEXT,THEN ANOTHER TEXT AND THEN A 'HIRE ME' BUTTON.THUS IT CONTAINS TOTAL OF 4 THINGS
+        (*)RIGHT HERO SECTION CONTAINS 6 IMAGES WITH ONE MAIN IMAGE AND THE REST OF THE 5 IMAGES OVERLAPPING THE MAIN IMAGE WHILE IN ANIMATION.ALSO THE MAIN IMAGE SCALES UP AND DOWN AS WELL WITH GREYSCALE EFFECT WHILE SCALING UP AND SHADOW EFFECT WHILE SCALING DOWN -->
+        <div class="hero-section">
+            <!-- CREATING HERO SECTION LEFT -->
+            <div class="hero-section-left">
+              <!-- 4 THINGS IN LEFT HERO SECTION -->
+  
+      <!--(1)--> <div class="hero-section-heading">
+                  Hi! Wajahat Hassan
+              </div>
+  
+      <!--(2)--Creating a sub heading for running text.Running text is to be displayed in span with class 'role' which is configured using a script below.tHIS SUB HEADING HAS MULTIPLE CLASSES INCLUDING THE CLASS OF MAIN HEADING BECOZ THEIR PROPERTIES AND STYLING IS SAME-->
+       <div class="hero-section-sub-heading hero-section-heading">I am a <span class="role"></span></div>
+  
+  <!--(3)--> <div class="hero-section-description">
+      I am a Software Developer and here is my Portfolio website.Here you'll learn about my journey as a Software Developer.
+  </div>
+  
+  <!--(4)--> <button class="btn-pink" id="btn">Hire Me</button>
+  
+            </div> <!--hero-section-left ends-->
+      
+  <!-- STARTING HERO SECTION-RIGHT -->
+  <div class="hero-section-right">
+  <!-- Since it contains 5 icon images and a main images.The 5 icon images are given 3 different classes.Class 'absolute' is used for psitioning among all icon images,Class 'icons' is used for styling all icons alnd the 3rd class is diffrent among all icon images for individual purposes.The main image has just once class 'User-Image' -->
+  <!--(1)-->   <div class="absolute icons icon-dots">
+  <img src="/images/userAsset/dots.png" alt="">
+  </div>
+  <!--(2)-->   <div class="absolute icons icon-cube">
+      <img src="/images/userAsset/cube.png" alt="">
+  </div>
+  <!--(3)-->   <div class="absolute icons icon-circle">
+      <img src="/images/userAsset/circle.png" alt="">
+  </div>
+  <!--(4)-->   <div class="absolute icons icon-zigzag">
+      <img src="/images/userAsset/zigzags.png" alt="">
+  </div>
+  <!--(5)-->   <div class="absolute icons icon-plus">
+      <img src="/images/userAsset/plus.png" alt="">
+  </div>
+  <!--(6)-->   <div class="user-image">
+      <img src="/xse.jpg" alt="">
+  </div>
+  </div> <!--hero-section-right ends-->
+  <!-- SINCE THERE IS AN UNSELECTABLE TEXT 'JOHN DOE' AT THE BOTTOM LEFT OF HERO SECTION,  -->
+  <div class="faded-text">Wajahat Hassan</div>
+  
+          </div>  <!--hero-section ends-->
+
+        </div> <!--container div ends-->
+
+    <!-- =====================================================================
+            PROJECTS SECTION STARTS 
+    ======================================================================
+NOTE THAT PROJECTS SECTION IS OUTSIDE THE CONTAINER DIV-->
+<div class="project-section">
+    <!-- HEADING FOR PROJECTS -->
+    <h2 class="page-header">Projects</h2>
+    <!-- Creating a project container which contains all the project cards -->
+    <div class="project-container">
+     <!-- Creating a div for project card with class project-card and this class will be used with every other project card.Each div will contain an id reflecting unique project cards -->
+ 
+     <!-- ==============================
+            IST PROJECCT CARD
+         =============================== -->
+ 
+ <!--(1)--> <div class="project-card" id="project1">
+      <div class="project-number">01</div>
+      <!-- CREATING CONTAINER FOR PROJECT CONTENT -->
+      <div class="project-content">
+     <!-- IST CONTENT IS SKILL ICONS,CREATING CONTAINER FOR SKILL ICONS -->
+     <div class="project-skills-container">
+ <!--(A)--> <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+ <!--(B)--> <img class="project-skill" src="./images/stack/CSS.png" alt="" />
+ <!--(C)--> <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+ <!--(D)--> <img class="project-skill" src="./images/stack/Express.png" alt="" />
+ <!--(E)--> <img class="project-skill" src="./images/stack/NextJsCircle.png" alt="" />
+ <!--(F)--> <img class="project-skill" src="./images/stack/Tailwind.png" alt="" />
+ <!--(G)--> <img class="project-skill" src="./images/stack/NodeJs.svg" alt="" />
+ <!--(H)--> <img class="project-skill" src="./images/stack/MongoDB.svg" alt="" />
+ <!--(I)--> <img class="project-skill" src="./images/stack/Redux.svg" alt="" />
+ <!--(J)--> <img class="project-skill" src="./images/stack/Vercel.svg" alt="" />
+     </div>  <!--project-skills container ends-->
+     <h2 class="project-heading">
+         Tint & Orange
+     </h2>
+  <p class="project-subHeading">
+     Its is a car modification copany 
+     which provide you sheets to protect your car from scratch.
+     </p>
+     <!-- CREATINGA SEPARATE DIV FOR BUTTON AND ICONS.BUTTON WILL USE THE SAME CLASS btn-pink WHICH IS ALREADY USED ABOVE & FOR ICONS WE ARE USING FONT-AWESOME WEBSITE TO DISPLY ICONS USING i TAG -->
+     <div class="btn-grp">
+         <button class="btn-pink btn-project">Read More</button>
+ 
+         <a href="">
+             <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+             </a>
+             <a href="">
+             <i title="Live Link" class="fa-solid fa-link icon"></i>
+             </a>
+     </div>
+      </div>  <!--PROJECT CONTENT ENDS-->
+   </div>       <!--IST PROJECT CARD ENDS-->
+ 
+    </div>  <!--PROJECT CONTAINER ENDS-->
+ 
+ </div>  <!--PROJECT SECTION ENDS-->
+
+</div> <!--Wrapper div ends-->
+
+<!-- ===============================
+     APPLYING SCRIPT ON 'ROLE' CLASS -->
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+     <script>
+        var typeData = new Typed(".role", {
+            strings: [
+                "Coder",
+                "Software Developer",
+                "Full Stack Developer",
+                "Web Developer",
+                "UI-UX Designer",
+                "Backend Developer",
+            ],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 1000,
+        });
+    </script>
+
+</body>
+</html>
